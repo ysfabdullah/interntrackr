@@ -8,8 +8,8 @@ import toast from 'react-hot-toast';
 
 const App = () => {
   return (
-    <div>
-
+    <div data-theme="cupcake">
+      <button className="btn">Button</button>
       <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/create" element={<CreatePage />} />
