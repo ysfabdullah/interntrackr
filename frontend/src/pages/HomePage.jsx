@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import Navbar from '../componets/Navbar';
 import RateLimitedUI from '../componets/RateLimitedUI';
 import { useState } from 'react';
+import axious from 'axios';
 
 
 const HomePage = () => {
@@ -12,9 +13,9 @@ const HomePage = () => {
   useEffect(() => {
     const fetchInternships = async () => {
       try {
-        const response = await axious.get('https://interntrackr-backend.onrender.com/api/internships');
+        const response = await axious.post('https://interntrackr-backend.onrender.com/api/internships');
       const data = await response.json();
-      console.log(data);
+      console.log(response.data);
       
       } catch (error) {
         console.error('Error fetching internships:', error)
@@ -26,7 +27,7 @@ const HomePage = () => {
 
 
   return (
-    <div classname="min-h-screen">
+    <div className="min-h-screen">
     
       <Navbar />
 
